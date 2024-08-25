@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Saguaro Interactive</title>
+    <!-- Include the Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!--CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!-- Company name -->
+            <div class="company-name">Saguaro Interactive</div>
+            <div class="nav-links">
+                <!-- Link to the main site -->
+                <a href="index.html">Back to Main Site</a>
+                <!-- Logout button -->
+                <a href="#" id="logoutButton">Log Out</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="account-section">
+            <!-- Welcome message with the logged in user's name -->
+            <h2>Welcome to Your Account, <span id="loggedInUser"></span>!</h2>
+        </section>
+    </main>
+    
+    <script>
+        /* Retrieve the logged in user from local storage */
+        document.addEventListener('DOMContentLoaded', function () {
+            const loggedInUser = localStorage.getItem('loggedInUser');
+            /* If a logged in user is found, update the login user element */
+            if (loggedInUser) {
+                document.getElementById('loggedInUser').textContent = loggedInUser;
+            }
+
+            /* Add event listener to the logout button */
+            document.getElementById('logoutButton').addEventListener('click', function () {
+                localStorage.removeItem('loggedInUser');
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
