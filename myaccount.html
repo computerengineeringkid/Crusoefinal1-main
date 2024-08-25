@@ -30,22 +30,7 @@
         </section>
     
     
-    <script>
-        /* Retrieve the logged in user from local storage */
-        document.addEventListener('DOMContentLoaded', function () {
-            const loggedInUser = localStorage.getItem('loggedInUser');
-            /* If a logged in user is found, update the login user element */
-            if (loggedInUser) {
-                document.getElementById('loggedInUser').textContent = loggedInUser;
-            }
 
-            /* Add event listener to the logout button */
-            document.getElementById('logoutButton').addEventListener('click', function () {
-                localStorage.removeItem('loggedInUser');
-                window.location.href = 'index.html';
-            });
-        });
-    </script>
     <script src="script.js"></script>
     
 </body>
